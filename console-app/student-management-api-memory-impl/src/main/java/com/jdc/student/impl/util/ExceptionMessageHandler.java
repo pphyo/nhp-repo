@@ -2,6 +2,8 @@ package com.jdc.student.impl.util;
 
 import java.time.LocalDate;
 
+import com.jdc.core.StringUtils;
+
 public class ExceptionMessageHandler {
 	
 	public static void checkIndex(int index, String domainName) {
@@ -11,7 +13,7 @@ public class ExceptionMessageHandler {
 	}
 	
 	public static void checkId(int id, String domain) {
-		throw new SMException("No %s found with Id %d!".formatted(domain, id))
+		throw new SMException("No %s found with Id %d!".formatted(domain, id));
 	}
 
 	

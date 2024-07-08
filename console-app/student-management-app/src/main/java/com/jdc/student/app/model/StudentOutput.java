@@ -6,18 +6,18 @@ import com.jdc.student.api.domain.Student;
 
 public class StudentOutput {
 	
-	private static final String ID_HEADER = "ID";
-	private static final String NAME_HEADER = "Name";
-	private static final String DOB_HEADER= "Dob";
-	private static final String ROLL_NUMBER_HEADER = "Roll Number";
-	private static final String FATHER_NAME_HEADER = "Father Name";
-	private static final String ADDRESS_HEADER = "Address";
+	private final String ID_HEADER = "ID";
+	private final String NAME_HEADER = "Name";
+	private final String DOB_HEADER= "Dob";
+	private final String ROLL_NUMBER_HEADER = "Roll Number";
+	private final String FATHER_NAME_HEADER = "Father Name";
+	private final String ADDRESS_HEADER = "Address";
 	
-	private static int[] lengths = new int[6];
+	private int[] lengths = new int[6];
 	
 	private List<Student> list;
 	
-	static {
+	{
 		lengths[0] = ID_HEADER.length();
 		lengths[1] = NAME_HEADER.length();
 		lengths[2] = DOB_HEADER.length();

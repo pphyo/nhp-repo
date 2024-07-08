@@ -8,11 +8,6 @@
   <artifactId>student-management-app</artifactId>
   
   <dependencies>
-  
-  	<dependency>
-  		<groupId>com.jdc.pphyo</groupId>
-  		<artifactId>core-lib</artifactId>
-  	</dependency>
   	
   	<dependency>
   		<groupId>com.jdc.pphyo</groupId>

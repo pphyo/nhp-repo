@@ -1,11 +1,12 @@
 package com.jdc.student.app.feature;
 
+import com.jdc.core.ChangeLanguageService;
 import com.jdc.student.app.model.StudentOutput;
 
 public class FindAllFeature extends StudentCrudFeature {
 
 	public FindAllFeature() {
-		super(4, "Find All Students");
+		super(4, ChangeLanguageService.getResource().getString("app.menu.four"));
 	}
 
 	@Override
@@ -17,6 +18,11 @@ public class FindAllFeature extends StudentCrudFeature {
 		} else {
 			System.out.println("No student found!");
 		}
+	}
+	
+	@Override
+	public void refreshMenu() {
+		setFeatureName(ChangeLanguageService.getResource().getString("app.menu.four"));
 	}
 
 }

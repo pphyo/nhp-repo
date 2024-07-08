@@ -1,6 +1,12 @@
 package com.jdc.core;
 
-public class ConsoleApplication {
+import static com.jdc.core.StringUtils.*;
+
+import java.text.MessageFormat;
+
+import static com.jdc.core.ChangeLanguageService.*;
+
+public class ConsoleApplication implements Cloneable {
 	
 	private String appName;
 	private AbstractFeature[] features;
@@ -13,7 +19,7 @@ public class ConsoleApplication {
 	
 	public void launch() {
 		// show welcome message
-		showMessage("Welcome to %s".formatted(appName));
+		showMessage(MessageFormat.format(getResource().getString("app.title"), appName));
 		System.out.println();
 
 		do {
@@ -32,7 +38,7 @@ public class ConsoleApplication {
 		} while(askToDoAgain());
 		
 		// exit and show message
-		showMessage("Thank you");
+		showMessage(getResource().getString("app.message.thanks"));
 		
 		InputUtils.getScanner().close();
 	}
@@ -44,7 +50,7 @@ public class ConsoleApplication {
 		}
 		
 		System.out.println();
-		var selectedId = InputUtils.readInt("Choose option: ");
+		var selectedId = InputUtils.readInt(getResource().getString("app.menu.choose"));
 		
 		return features[selectedId - 1];
 	}
@@ -52,23 +58,17 @@ public class ConsoleApplication {
 	private boolean askToDoAgain() {
 		System.out.println();
 		
-		var result = InputUtils.readString("Do you want to continue?(y/others): ");
+		var result = InputUtils.readString(getResource().getString("app.message.continue"));
 		
 		System.out.println();
 		return result.equalsIgnoreCase("Y");
 	}
-
-	private void showMessage(String message) {
-		String star = "";
-		
-		for(int i = 0, l = message.length(); i < l; i ++) {
-			star += "*";
-		}
-		
-		System.out.println("**%s**".formatted(star));
-		System.out.println("* %s *".formatted(message));
-		System.out.println("**%s**".formatted(star));
-	}
 	
+	public ConsoleApplication clone() {
+		for(var feature : features) {
+			feature.refreshMenu();
+		}
+		return new ConsoleApplication(appName, features);
+	}
 
 }

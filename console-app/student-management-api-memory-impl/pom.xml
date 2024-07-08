@@ -13,6 +13,11 @@
 
 		<dependency>
 			<groupId>com.jdc.pphyo</groupId>
+			<artifactId>core-lib</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jdc.pphyo</groupId>
 			<artifactId>student-magement-api</artifactId>
 		</dependency>
 

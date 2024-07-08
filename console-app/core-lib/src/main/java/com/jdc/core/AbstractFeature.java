@@ -19,7 +19,12 @@ public abstract class AbstractFeature {
 		return featureName;
 	}
 	
+	public void setFeatureName(String featureName) {
+		this.featureName = featureName;
+	}
+	
 	public abstract void doBusiness();
+	public abstract void refreshMenu();
 	
 	public void showMenu() {
 		System.out.println("%d. %s".formatted(id, featureName));
