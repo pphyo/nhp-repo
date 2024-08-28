@@ -1,0 +1,20 @@
+Signal inputs with input()
+Reading input() values
+Optional inputs
+Making an input to be required
+Setting a custom public name: alias
+Value transformation: transform
+Deriving values from input signals
+No more need for the OnChanges lifecycle hook
+What is output()?
+Alias on output()
+output() RxJs interoperability using outputFromObservable()
+output() RxJs interoperability using outputToObservable()
+What is model()?
+Two-Way Binding to a Signal Value
+When to use model()?
+Two-Way Binding to a Non-Signal Value
+Responding to model changes
+Using alias on model()
+Making model() to be required
+Summary
