@@ -3,26 +3,52 @@ package com.pphyo.spring.test;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.Date;
+import java.util.List;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
-import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
 
-import com.pphyo.spring.EmployeeService;
-import com.pphyo.spring.MessageService;
+import com.pphyo.spring.JavaBaseConfig;
+import com.pphyo.spring.anno.AnnotationBean;
+import com.pphyo.spring.anno.MessageService;
+import com.pphyo.spring.xml.EmployeeService;
 
 public class HelloSpringTest {
 	
-	static GenericXmlApplicationContext context;
+	static GenericApplicationContext context;
 	
 	@BeforeAll
 	static void setUpBefore() {
-		context = new GenericXmlApplicationContext("classpath:/beans.xml");
+		context = new AnnotationConfigApplicationContext(JavaBaseConfig.class);
 	}
 	
 	@Test
-	void test() {
+	void testTwo() {
+		@SuppressWarnings("unchecked")
+		List<String> list = context.getBean(List.class);
+		assertNotNull(list);
+		
+		var messageService = context.getBean("service", MessageService.class);
+		assertNotNull(messageService);
+		
+		var annoBean = context.getBean("annotationBean", AnnotationBean.class);
+		assertNotNull(annoBean);
+		
+		assertThrows(NoSuchBeanDefinitionException.class, () -> context.getBean(EmployeeService.class));
+	}
+	
+	@Test
+	@Disabled
+	void testOne() {
+		var utilDate = context.getBean("utilDate", Date.class);
+		System.out.println(utilDate);
+		
 		var bean1 = context.getBean(EmployeeService.class);
 		assertNotNull(bean1);
 		
@@ -34,7 +60,7 @@ public class HelloSpringTest {
 		var bean3 = context.getBean(MessageService.class);
 		assertNotNull(bean3);
 		
-		var bean4 = context.getBean("msgService");
+		var bean4 = context.getBean("messageService");
 		assertNotNull(bean4);
 		
 		assertThrows(NoSuchBeanDefinitionException.class, () -> context.getBean("msgServic", MessageService.class));

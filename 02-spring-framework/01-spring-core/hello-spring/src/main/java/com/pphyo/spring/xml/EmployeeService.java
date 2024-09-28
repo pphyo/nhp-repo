@@ -1,4 +1,4 @@
-package com.pphyo.spring;
+package com.pphyo.spring.xml;
 
 public class EmployeeService {
 	
@@ -6,9 +6,8 @@ public class EmployeeService {
 		System.out.println("Employee Service Default Constructor");
 	}
 	
-	public EmployeeService(String data) {
-		System.out.println(data);
-		System.out.println("Employee Service Constructor with int param");
+	public EmployeeService(String strValue, int intValue) {
+		System.out.printf("%s : %d%n", strValue, intValue);
 	}
 	
 	public String greet() {

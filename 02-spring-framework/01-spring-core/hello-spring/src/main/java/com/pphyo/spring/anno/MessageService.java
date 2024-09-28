@@ -1,4 +1,4 @@
-package com.pphyo.spring;
+package com.pphyo.spring.anno;
 
 public class MessageService {
 	

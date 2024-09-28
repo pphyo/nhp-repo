@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mvn.spring.core</groupId>
-	<artifactId>01-spring-core</artifactId>
-	<version>1.0</version>
+	<groupId>com.pphyo.spring</groupId>
+	<artifactId>02-spring-beans</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<dependencies>
@@ -20,7 +20,7 @@
 			<artifactId>junit-jupiter</artifactId>
 			<version>5.11.0</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
 
 	</dependencies>
 
@@ -38,10 +38,7 @@
 
 		</plugins>
 	</build>
-
 	<modules>
-		<module>01-hello-spring</module>
-		<module>02-post-processors</module>
-		<module>03-event-publisher</module>
+		<module>01-bean-creation</module>
 	</modules>
 </project>

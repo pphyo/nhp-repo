@@ -1,18 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<!-- bean definition -->
-	<bean id="dataBean"></bean>
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<!-- bean definition -->
-    <bean id="empService" class="com.pphyo.spring.EmployeeService">
-    	<constructor-arg ref=""></constructor-arg>
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.pphyo.spring"></context:component-scan>
+	
+	<bean id="utilDate" class="java.util.Date">
+		<constructor-arg type="long" value="1000"></constructor-arg>
+	</bean>
+	
+	bean definition
+    <bean id="empService" class="com.pphyo.spring.xml.EmployeeService">
+    	<constructor-arg index="1" value="100"></constructor-arg>
+    	<constructor-arg index="0" value="String value"></constructor-arg>
     </bean>
     
-    <!-- bean definition -->
+    bean definition
     <bean id="msgService" class="com.pphyo.spring.MessageService"></bean>
 
-</beans>
+</beans> -->
