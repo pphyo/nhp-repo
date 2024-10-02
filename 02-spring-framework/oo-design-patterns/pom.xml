@@ -7,6 +7,14 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.34</version>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -22,5 +30,6 @@
 
 	<modules>
 		<module>01-factory-method</module>
+		<module>02-singleton</module>
 	</modules>
 </project>

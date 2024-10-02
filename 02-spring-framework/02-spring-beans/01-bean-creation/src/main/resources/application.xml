@@ -5,15 +5,19 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<!-- bean config -->
 	<bean id="simpleCourseBean" class="com.jdc.creation.Course"></bean>
 	
 	<!-- static factory bean config -->
 	<bean id="staticCourseBean" class="com.jdc.creation.factory.StaticCourseFactory" factory-method="create">
-		<constructor-arg name="name" value="Java Baisc"></constructor-arg>
-		<constructor-arg name="fees" value="300000"></constructor-arg>
+		<constructor-arg name="name" value="Java Basic"></constructor-arg>
+		<constructor-arg name="fees" value="300000d"></constructor-arg>
 		<constructor-arg name="level" value="Basic"></constructor-arg>
 		<constructor-arg name="duration" value="3"></constructor-arg>
 	</bean>
+	
+	<bean id="instanceCourseFactory" class="com.jdc.creation.factory.InstanceCourseFactory"></bean>
+	
+	<!-- instance factory bean config -->
+	<bean id="instanceCourseBean" factory-bean="instanceCourseFactory" factory-method="create"></bean>
 
 </beans>

@@ -40,5 +40,7 @@
 	</build>
 	<modules>
 		<module>01-bean-creation</module>
+		<module>02-bean-with-annotation</module>
+		<module>03-bean-names-and-alias</module>
 	</modules>
 </project>

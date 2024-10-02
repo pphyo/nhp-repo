@@ -6,7 +6,7 @@ public class Student {
 	private int age;
 	private String phone;
 
-	public Student() {}
+	Student() {}
 	
 	public String getName() {
 		return name;
