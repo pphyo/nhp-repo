@@ -31,5 +31,6 @@
 	<modules>
 		<module>01-factory-method</module>
 		<module>02-singleton</module>
+		<module>03-prototype</module>
 	</modules>
 </project>
