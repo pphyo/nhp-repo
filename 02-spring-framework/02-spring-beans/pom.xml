@@ -42,5 +42,6 @@
 		<module>01-bean-creation</module>
 		<module>02-bean-with-annotation</module>
 		<module>03-bean-names-and-alias</module>
+		<module>04-bean-scopes</module>
 	</modules>
 </project>
