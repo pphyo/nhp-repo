@@ -7,6 +7,18 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.34</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 
 		<dependency>
@@ -20,7 +32,7 @@
 			<artifactId>junit-jupiter</artifactId>
 			<version>5.11.0</version>
 			<scope>test</scope>
-		</dependency>																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
+		</dependency>
 
 	</dependencies>
 
@@ -43,5 +55,7 @@
 		<module>02-bean-with-annotation</module>
 		<module>03-bean-names-and-alias</module>
 		<module>04-bean-scopes</module>
+		<module>05-bean-lifecycle</module>
+		<module>06-bean-explicit-wiring</module>
 	</modules>
 </project>
