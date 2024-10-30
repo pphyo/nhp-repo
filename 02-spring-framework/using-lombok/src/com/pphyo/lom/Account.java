@@ -1,14 +1,10 @@
 package com.pphyo.lom;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Builder;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode(exclude = {"role"})
+@Data
+@Builder
 public class Account {
 
 	private String email;

@@ -1,25 +1,68 @@
 package com.pphyo.lom;
 
-import lombok.NonNull;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
+import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class LombokApplication {
+	
+//	static {
+//		setLoggerHandler(Level.FINEST);
+//	}
 
 	public static void main(String[] args) {
-		var account = new Account();
-		account.setEmail("pyaephyo@gmail.com");
-		account.setPassword("pyaephyo");
-		account.setAge(10);
-		account.setRole("Admin");
+		var account = Account.builder()
+				.email("pyaephyo@gmail.com")
+				.password("pyaephyo")
+				.age(10)
+				.role("Admin")
+				.build();
 		
-		var account2 = new Account();
-		account2.setEmail("pyaephyo@gmail.com");
-		account2.setPassword("pyaephyo");
-		account2.setAge(10);
-		account2.setRole("Student");
+		var account2 = Account.builder()
+				.email("pyaephyo@gmail.com")
+				.password("pyaephyo")
+				.age(10)
+				.role("Admin")
+				.build();
 		
 		System.out.println(account.equals(account2));
 		
+//		var hh = new Student("Hla Hla", 14);
+//		
+//		var kk = hh.withName("Kyaw Kyaw").withAge(17);
+		
+		log.trace("This is a fine log.");
 
+		log.warn("This is warning log.");
+		
+		log.info("This is info log.");
+		
+		log.error("This is error log.");
+		
+	}
+	
+//	static void setLoggerHandler(Level level) {
+//		log.setLevel(level);
+//		var handler = new ConsoleHandler();
+//		handler.setFormatter(new ColorFormatter());
+//		handler.setLevel(level);
+//		log.addHandler(handler);
+//	}
+	
+	static Connection getDbConnection() {
+		Connection conn = null;
+		
+		try {
+			conn = DriverManager.getConnection("", "", "");
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		
+		return conn;
 	}
 	
 	static class AccountManager {
