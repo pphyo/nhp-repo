@@ -33,5 +33,13 @@
 		<module>02-singleton</module>
 		<module>03-prototype</module>
 		<module>04-abstract-factory</module>
+		<module>05-builder</module>
+		<module>06-adapter</module>
+		<module>07-bridge</module>
+		<module>08-composite</module>
+		<module>09-decorator</module>
+		<module>10-facade</module>
+		<module>11-flyweight</module>
+		<module>12-proxy</module>
 	</modules>
 </project>
