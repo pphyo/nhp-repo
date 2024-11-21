@@ -41,5 +41,9 @@
 		<module>10-facade</module>
 		<module>11-flyweight</module>
 		<module>12-proxy</module>
+		<module>13-chain-of-responsibility</module>
+		<module>14-command</module>
+		<module>15-iterator</module>
+		<module>16-mediator</module>
 	</modules>
 </project>
