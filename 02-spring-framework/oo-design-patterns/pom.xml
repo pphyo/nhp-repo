@@ -45,5 +45,6 @@
 		<module>14-command</module>
 		<module>15-iterator</module>
 		<module>16-mediator</module>
+		<module>17-memento</module>
 	</modules>
 </project>

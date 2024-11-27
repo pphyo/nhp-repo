@@ -10,14 +10,13 @@ public class ComponentA implements Component {
 
 	@Override
 	public void send(String message) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Component A sending: " + message);
+		mediator.notify(this, message);
 	}
 
 	@Override
 	public void receive(String message) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Component A received: " + message);		
 	}
 	
 	

@@ -8,20 +8,15 @@ public class ComponentB implements Component {
 		this.mediator = mediator;
 	}
 	
-	public void doOperation() {
-		mediator.notify(this, "Component B operation.");
-	}
-
 	@Override
 	public void send(String message) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Component B sending: " + message);
+		mediator.notify(this, message);
 	}
 
 	@Override
 	public void receive(String message) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Component B received: " + message);		
 	}
 
 }
