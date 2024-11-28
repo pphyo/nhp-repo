@@ -46,5 +46,10 @@
 		<module>15-iterator</module>
 		<module>16-mediator</module>
 		<module>17-memento</module>
+		<module>18-observer</module>
+		<module>19-state</module>
+		<module>20-strategy</module>
+		<module>21-template-method</module>
+		<module>22-visitor</module>
 	</modules>
 </project>
